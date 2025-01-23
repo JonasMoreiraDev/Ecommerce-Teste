@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import clsx from "clsx";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 
@@ -24,10 +25,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang="pt-br">
+      <body className={`${clsx(geistSans.variable, "bg-slate-700" )} ${geistMono.variable} antialiased`}>
         <Navbar />
-        <main className="bg-slate-700 h-screen p-16">
+        <main className=" h-full p-16">
         {children}
         </main>
       </body>
